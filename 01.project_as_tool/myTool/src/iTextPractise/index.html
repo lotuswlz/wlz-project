@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <style type="text/css">
+	body {
+		font-family:"Times New Roman"
+	}
+	.li1 li{
+		font-size:24px;
+		font-weight:bold;
+	}
+	.li2 li {
+		font-size:14px;
+		font-weight:normal;
+	}
+
+	h1 {
+		font-size: 36px;
+		font-weight:bold;
+	}
+	a {
+		color: black;
+		text-decoration:none;
+	}
+	a:hover {
+		color: black;
+		text-decoration:underline;
+	}
+	a:visited {
+		text-decoration:none; color:#000000;
+	}
+	a:active {
+		text-decoration: underline;
+	}
+	.page-break	{ display:block; page-break-before:always; }
+  </style>
+ </head>
+
+ <body>
+  <ul class="li1">
+	<li><a href="#abstract">1. Abstract</a></li>
+	<li><a href="#chapter1">2. Chapter 1</a>
+		<ol class="li2">
+			<li>ABCD</li>
+			<li>EFGH</li>
+		</ol>
+	</li>
+	<li>3. Chapter 2</li>
+  </ul>
+
+<div class="page-break"></div>
+
+  <h1 id="abstract">Abstract</h1>
+  <hr/>
+  <pre>
+	1.放置
+
+	http://activemq.apache.org/download.html
+
+	2.解压
+
+	将下载下来的apache-activemq-5.2.0-bin.tar.gz放置于/usr/local
+
+	cd /usr/local/
+
+	tar xvfz apache-activemq-5.2.0-bin.tar.gz
+
+	则ActiveMQ的安装目录为：/usr/local/apache-activemq-5.2.0
+
+	3.修改activemq运行文件的权限
+
+	cd /usr/local/apache-activemq-5.2.0/bin
+
+	chmod 755 activemq 
+  </pre>
+<div class="page-break"></div>
+	<h1 id="chapter1">Chapter 1</h1>
+<hr/>
+  <pre>
+	1.下载
+
+	http://activemq.apache.org/download.html
+
+	2.解压
+
+	将下载下来的apache-activemq-5.2.0-bin.tar.gz放置于/usr/local
+
+	cd /usr/local/
+
+	tar xvfz apache-activemq-5.2.0-bin.tar.gz
+
+	则ActiveMQ的安装目录为：/usr/local/apache-activemq-5.2.0
+
+	3.修改activemq运行文件的权限
+
+	cd /usr/local/apache-activemq-5.2.0/bin
+
+	chmod 755 activemq 
+  </pre>
+ </body>
+</html>
