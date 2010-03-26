@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss_map>
+	<rss_category name="news" description="NEWS">
+		<entry>
+			<name>World</name>
+			<link>http://www.xinhuanet.com/english2010/rss/worldrss.xml</link>
+			<cat_id>1</cat_id>
+		</entry>
+		<entry>
+			<name>China</name>
+			<link>http://www.xinhuanet.com/english2010/rss/chinarss.xml</link>
+			<cat_id>2</cat_id>
+		</entry>
+		<entry>
+			<name>Business</name>
+			<link>http://www.xinhuanet.com/english2010/rss/businessrss.xml</link>
+			<cat_id>3</cat_id>
+		</entry>
+		<entry>
+			<name>Culture &amp; Edu</name>
+			<link>http://www.xinhuanet.com/english2010/rss/culturerss.xml</link>
+			<cat_id>4</cat_id>
+		</entry>
+		<entry>
+			<name>Sports</name>
+			<link>http://www.xinhuanet.com/english2010/rss/sportsrss.xml</link>
+			<cat_id>5</cat_id>
+		</entry>
+		<entry>
+			<name>Entertainment</name>
+			<link>http://www.xinhuanet.com/english2010/rss/entertainmentrss.xml</link>
+			<cat_id>6</cat_id>
+		</entry>
+		<entry>
+			<name>Sci &amp; Tech</name>
+			<link>http://www.xinhuanet.com/english2010/rss/scirss.xml</link>
+			<cat_id>7</cat_id>
+		</entry>
+		<entry>
+			<name>Health</name>
+			<link>http://www.xinhuanet.com/english2010/rss/healthrss.xml</link>
+			<cat_id>8</cat_id>
+		</entry>
+		<entry>
+			<name>Travel</name>
+			<link>http://www.xinhuanet.com/english2010/rss/travelrss.xml</link>
+			<cat_id>9</cat_id>
+		</entry>
+		<entry>
+			<name>In-Depth</name>
+			<link>http://www.xinhuanet.com/english2010/rss/indepthrss.xml</link>
+			<cat_id>10</cat_id>
+		</entry>
+		<entry>
+			<name>Odd News</name>
+			<link>http://www.xinhuanet.com/english2010/rss/oddrss.xml</link>
+			<cat_id>11</cat_id>
+		</entry>
+		<entry>
+			<name>Photos</name>
+			<link>http://www.xinhuanet.com/english2010/rss/photosrss.xml</link>
+			<cat_id>12</cat_id>
+		</entry>
+		<entry>
+			<name>Video</name>
+			<link>http://www.xinhuanet.com/english2010/rss/videorss.xml</link>
+			<cat_id>13</cat_id>
+		</entry>
+	</rss_category>
+</rss_map>
