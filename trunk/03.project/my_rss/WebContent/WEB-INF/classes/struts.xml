@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.objectFactory"
+		value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+	<!-- picture upload can use it blow -->
+    <constant name="struts.multipart.parser" value="jakarta"></constant>
+   	<constant name="struts.multipart.maxSize" value="5242880"></constant>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<!-- constant name="struts.custom.i18n.resources"
+		value="resources.message">
+	</constant-->
+
+	<package name="cw-default" extends="struts-default">
+
+		<!-- interceptors>
+			<interceptor name="remindInterceptor"
+				class="remindInterceptor" />
+
+			<interceptor name="activitySummaryInterceptor"
+				class="activitySummaryInterceptor" />
+
+			<interceptor name="searchPrepareInterceptor"
+				class="searchPrepareInterceptor" />
+
+			<interceptor name="accessPowerInterceptor"
+				class="accessPowerInterceptor" />
+
+			<interceptor name="accountSummaryInterceptor"
+				class="accountSummaryInterceptor" />
+
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="accessPowerInterceptor" /> -->
+
+				<!-- OfferMe application specific interceptor to prepare data from sitemesh. -->
+		<!-- 		<interceptor-ref name="remindInterceptor" />
+				<interceptor-ref name="searchPrepareInterceptor" />
+				
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		
+
+		<default-interceptor-ref name="myStack" />
+		<default-action-ref name="page_not_found"/>
+-->
+		<global-results>
+			<result name="exception">/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="exception" />
+		</global-exception-mappings>
+
+
+		<!-- A wildcard action at the end of the configuration can be used to 
+			catch unmatched references.
+			
+			It's important to put a "catchall" wildcard mapping like this at 
+			the end of your configuration so it won't attempt to map every 
+			request! 
+			
+			http://struts.apache.org/2.x/docs/action-configuration.html -->
+		<!--
+			<action name="*">
+			<result>/{1}.jsp</result>
+			</action>
+		-->
+
+	</package>
+
+	<include file="action-test.xml" />
+</struts>
