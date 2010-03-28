@@ -14,6 +14,10 @@ public class RssItemListAction extends ActionSupport {
 	private static final long serialVersionUID = -8823654060486230468L;
 	// input params
 	private String catId;
+	
+	private int type;
+	
+	private String basePath;
 
 	// output params
 	private List<RssItemBean> list;
@@ -28,7 +32,12 @@ public class RssItemListAction extends ActionSupport {
 		try {
 			this.list = RssUtil.getRssItemListByType(catId);
 			this.typeName = RssUtil.getRssMap().get(catId).getTypeName();
-			return SUCCESS;
+//			this.basePath = RssUtil.getRssMap().get(catId).getLink();
+			if (type == 0) {
+				return SUCCESS;
+			} else {
+				return "success2";
+			}
 		} catch (JDOMException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -47,5 +56,17 @@ public class RssItemListAction extends ActionSupport {
 
 	public String getTypeName() {
 		return typeName;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
+	}
+
+	public String getBasePath() {
+		return basePath;
 	}
 }
