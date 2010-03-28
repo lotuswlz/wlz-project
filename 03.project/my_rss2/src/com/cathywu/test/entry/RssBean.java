@@ -10,7 +10,6 @@ public class RssBean {
 
     private String typeName;
     private String link;
-    private String category;
     private String catId;
 
     public String getCatId() {
@@ -25,10 +24,10 @@ public class RssBean {
 
     }
 
-    public RssBean(String typeName, String link, String category, String catId) {
+    public RssBean(String typeName, String link, String catId) {
         this.typeName = typeName;
         this.link = link;
-        this.category = category;
+        this.catId = catId;
     }
 
     public String getTypeName() {
@@ -46,18 +45,9 @@ public class RssBean {
     public void setLink(String link) {
         this.link = link;
     }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     @Override
     public String toString() {
-        return "name: " + this.typeName + "; category: " + this.category
+        return "name: " + this.typeName + "; catId: " + this.catId
                 + "; link: " + this.link;
     }
 }
