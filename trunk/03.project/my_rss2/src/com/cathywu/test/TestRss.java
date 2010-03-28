@@ -95,7 +95,6 @@ public class TestRss {
     
     /**
      * Get rss list.
-     * @param feed SyndFeed
      * @return List&lt;SyndEntry&gt;
      */
     @SuppressWarnings("finally")

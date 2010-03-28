@@ -9,6 +9,10 @@
 			<result name="success">/index.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
+		<action name="rss_detail" class="com.cathywu.test.action.RssItemListAction">
+			<result name="success">/rss_item_list.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
 	</package>
 
 </struts>
