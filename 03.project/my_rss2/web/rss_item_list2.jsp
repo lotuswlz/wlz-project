@@ -18,19 +18,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	<link rel="stylesheet" type="text/css" href="static/css/main.css">
 	<style type="text/css">
-	 ul li.c1 {
-		width:50px;
-		text-align:right;
-		padding-right:10px;
-	 }
-	 ul li.c2 {
-		width:75%;
-	 }
-	 ul li.c3 {
-		width:120px;
-	 }
-	 ul li.c4 {
-		width:100px;
+	 div.xx {
+	 	widht:100%;
+	 	z-index:999;
+	 	line-height:33px;
+	 	
 	 }
 	</style>
   </head>
@@ -42,8 +34,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<li class="c1 <s:if test="#st.odd">odd</s:if><s:else>even</s:else>"><s:property value="#st.index + 1" /></li>
 		<li class="c2 <s:if test="#st.odd">odd</s:if><s:else>even</s:else>"><s:property value="title" escape="false"/></li>
 		<li class="c3 <s:if test="#st.odd">odd</s:if><s:else>even</s:else>"><s:property value="publishDate"/></li>
-		<li class="c4 <s:if test="#st.odd">odd</s:if><s:else>even</s:else>"><s:if test="href == null">&nbsp;</s:if><s:else><a href="<s:property value='href'/>" target="_blank">see detail</a></s:else></li>
+		<li class="c4 <s:if test="#st.odd">odd</s:if><s:else>even</s:else>"><a href="<s:property value='href'/>" target="_blank">see detail</a></li>
 	</s:iterator>
-</ul>
+	</ul>
+	<s:iterator value="list" status="st">
+	<div class="xx">
+		<SPAN><s:property value="title" escape="false"/></SPAN>
+		<br />
+		<div style="width:100%"><div xmlns="http://www.w3.org/1999/xhtml" class="entry"><div xml:base="<s:property value='basePath' />" class="feedEntryContent"><s:property value="description" escape="false"/></div></div></div>
+	</div>
+	<hr/>
+	</s:iterator>
   </body>
 </html>

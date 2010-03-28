@@ -75,7 +75,7 @@ public class RssUtil {
      * @throws IOException
      */
     public static List<RssItemBean> getRssItemListByType(String catId) throws JDOMException, IOException {
-		RssBean rss = rssMap.get(catId);
+		RssBean rss = getRssMap().get(catId);
 		TestRss t = new TestRss(rss.getLink());
 		List<SyndEntry> list = t.getRssList();
 		List<RssItemBean> result = new ArrayList<RssItemBean>();
