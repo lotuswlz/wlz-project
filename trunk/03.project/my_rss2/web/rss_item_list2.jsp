@@ -29,14 +29,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <h1><s:property value="typeName"/></h1>
-    <ul style="list-style:none">
-	<s:iterator value="list" status="st">
-		<li class="c1 <s:if test="#st.odd">odd</s:if><s:else>even</s:else>"><s:property value="#st.index + 1" /></li>
-		<li class="c2 <s:if test="#st.odd">odd</s:if><s:else>even</s:else>"><s:property value="title" escape="false"/></li>
-		<li class="c3 <s:if test="#st.odd">odd</s:if><s:else>even</s:else>"><s:property value="publishDate"/></li>
-		<li class="c4 <s:if test="#st.odd">odd</s:if><s:else>even</s:else>"><a href="<s:property value='href'/>" target="_blank">see detail</a></li>
-	</s:iterator>
-	</ul>
 	<s:iterator value="list" status="st">
 	<div class="xx">
 		<SPAN><s:property value="title" escape="false"/></SPAN>
