@@ -24,7 +24,8 @@ import com.sun.syndication.feed.synd.SyndEntry;
 
 public class RssUtil {
 
-    private final static String XMLFILEPATH = "E:/project/JAVA/wlz-project/03.project/my_rss2/resources/rss_map.xml";
+//    private final static String XMLFILEPATH = "E:/project/JAVA/wlz-project/03.project/my_rss2/resources/rss_map.xml";
+    private final static String XMLFILEPATH = "E:/MyProject/wlz-project/03.project/my_rss2/resources/rss_map.xml";
     
     private static Map<String, RssBean> rssMap;
     private static Map<String, RssCategoryBean> rssCategoryMap;
