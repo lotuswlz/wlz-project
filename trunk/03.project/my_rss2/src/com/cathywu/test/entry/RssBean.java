@@ -11,8 +11,27 @@ public class RssBean {
     private String typeName;
     private String link;
     private String catId;
+    private String baseLink;
+	private boolean displayDetail;
+	private long useTime;
 
-    public String getCatId() {
+    public long getUseTime() {
+		return useTime;
+	}
+
+	public void setUseTime(long useTime) {
+		this.useTime = useTime;
+	}
+
+	public boolean isDisplayDetail() {
+		return displayDetail;
+	}
+
+	public void setDisplayDetail(boolean displayDetail) {
+		this.displayDetail = displayDetail;
+	}
+
+	public String getCatId() {
         return catId;
     }
 
@@ -45,6 +64,19 @@ public class RssBean {
     public void setLink(String link) {
         this.link = link;
     }
+    
+    public String getBaseLink() {
+    	if (this.baseLink != null) {
+    		return this.baseLink;
+    	}
+    	if (this.link == null || !this.link.contains("/") || this.link.trim().equals("")) {
+    		this.baseLink = this.link;
+    	}
+    	this.baseLink = this.link.substring(0, this.link.lastIndexOf("/"));
+    	this.baseLink = this.baseLink.substring(0, this.baseLink.lastIndexOf("/"));
+    	return this.link;
+    }
+    
     @Override
     public String toString() {
         return "name: " + this.typeName + "; catId: " + this.catId

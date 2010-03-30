@@ -104,7 +104,6 @@ public class TestRss {
             URL feedUrl = new URL(urlStr);
             SyndFeedInput input = new SyndFeedInput();
             SyndFeed feed = input.build(new XmlReader(feedUrl));
-            show(feed);
             List list = feed.getEntries();
             for (int i = 0; i < list.size(); i++) {
                 result.add((SyndEntry) list.get(i));

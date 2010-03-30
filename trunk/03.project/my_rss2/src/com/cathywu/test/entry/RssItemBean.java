@@ -9,6 +9,9 @@ public class RssItemBean {
 	private String description;
 	private Date publishDate;
 	private String author;
+	
+	private RssBean parentRssBean;
+	
 	public String getTitle() {
 		return title;
 	}
@@ -22,8 +25,8 @@ public class RssItemBean {
 		this.href = href;
 	}
 	public String getDescription() {
-		if (description != null) {
-			description = description.replaceAll("src=\"\\.\\.", "src=\"http://www.xinhuanet.com/english2010/");
+		if (description != null) {			
+			description = description.replaceAll("src=\"\\.\\.", "src=\"" + this.parentRssBean.getBaseLink() + "/");
 		}
 		return description;
 	}
@@ -41,5 +44,11 @@ public class RssItemBean {
 	}
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+	public RssBean getParentRssBean() {
+		return parentRssBean;
+	}
+	public void setParentRssBean(RssBean parentRssBean) {
+		this.parentRssBean = parentRssBean;
 	}
 }

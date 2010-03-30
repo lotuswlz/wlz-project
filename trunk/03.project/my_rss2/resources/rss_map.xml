@@ -1,70 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss_map>
-	<rss_category name="news" description="NEWS">
+	<rss_category id="1" name="news" description="NEWS">
 		<entry>
 			<name>World</name>
 			<link>http://www.xinhuanet.com/english2010/rss/worldrss.xml</link>
 			<cat_id>1</cat_id>
+			<display_detail>true</display_detail>
 		</entry>
 		<entry>
 			<name>China</name>
 			<link>http://www.xinhuanet.com/english2010/rss/chinarss.xml</link>
 			<cat_id>2</cat_id>
+			<display_detail>true</display_detail>
 		</entry>
 		<entry>
 			<name>Business</name>
 			<link>http://www.xinhuanet.com/english2010/rss/businessrss.xml</link>
 			<cat_id>3</cat_id>
+			<display_detail>true</display_detail>
 		</entry>
 		<entry>
 			<name>Culture &amp; Edu</name>
 			<link>http://www.xinhuanet.com/english2010/rss/culturerss.xml</link>
 			<cat_id>4</cat_id>
+			<display_detail>true</display_detail>
 		</entry>
 		<entry>
 			<name>Sports</name>
 			<link>http://www.xinhuanet.com/english2010/rss/sportsrss.xml</link>
 			<cat_id>5</cat_id>
+			<display_detail>true</display_detail>
 		</entry>
 		<entry>
 			<name>Entertainment</name>
 			<link>http://www.xinhuanet.com/english2010/rss/entertainmentrss.xml</link>
 			<cat_id>6</cat_id>
+			<display_detail>true</display_detail>
 		</entry>
 		<entry>
 			<name>Sci &amp; Tech</name>
 			<link>http://www.xinhuanet.com/english2010/rss/scirss.xml</link>
 			<cat_id>7</cat_id>
+			<display_detail>true</display_detail>
 		</entry>
 		<entry>
 			<name>Health</name>
 			<link>http://www.xinhuanet.com/english2010/rss/healthrss.xml</link>
 			<cat_id>8</cat_id>
+			<display_detail>true</display_detail>
 		</entry>
 		<entry>
 			<name>Travel</name>
 			<link>http://www.xinhuanet.com/english2010/rss/travelrss.xml</link>
 			<cat_id>9</cat_id>
+			<display_detail>true</display_detail>
 		</entry>
 		<entry>
 			<name>In-Depth</name>
 			<link>http://www.xinhuanet.com/english2010/rss/indepthrss.xml</link>
 			<cat_id>10</cat_id>
+			<display_detail>true</display_detail>
 		</entry>
 		<entry>
 			<name>Odd News</name>
 			<link>http://www.xinhuanet.com/english2010/rss/oddrss.xml</link>
 			<cat_id>11</cat_id>
+			<display_detail>true</display_detail>
 		</entry>
 		<entry>
 			<name>Photos</name>
 			<link>http://www.xinhuanet.com/english2010/rss/photosrss.xml</link>
 			<cat_id>12</cat_id>
+			<display_detail>true</display_detail>
 		</entry>
 		<entry>
 			<name>Video</name>
 			<link>http://www.xinhuanet.com/english2010/rss/videorss.xml</link>
 			<cat_id>13</cat_id>
+			<display_detail>true</display_detail>
+		</entry>
+	</rss_category>
+	<rss_category id="2" name="friend_blog" description="Blogs">
+		<entry>
+			<cat_id>14</cat_id>
+			<name>Me</name>
+			<link>http://www.cnblogs.com/lotuswlz/rss</link>
+			<display_detail>false</display_detail>
+		</entry>
+		<entry>
+			<cat_id>15</cat_id>
+			<name>Reinhardt</name>
+			<link>http://www.lifenotes.cn/feed</link>
+			<display_detail>false</display_detail>
+		</entry>
+		<entry>
+			<cat_id>16</cat_id>
+			<name>Phinecos(洞庭散人)</name>
+			<link>http://www.cnblogs.com/phinecos/rss</link>
+			<display_detail>false</display_detail>
+		</entry>
+		<entry>
+			<cat_id>17</cat_id>
+			<name>Wallace</name>
+			<link>http://feeds.feedsky.com/csdn.net/axzywan</link>
+			<display_detail>true</display_detail>
+		</entry>
+		<entry>
+			<cat_id>18</cat_id>
+			<name>Qin JingXiang</name>
+			<link>http://www.cnblogs.com/puke/rss</link>
+			<display_detail>false</display_detail>
+		</entry>
+	</rss_category>
+	<rss_category id="3" name="other_web_site" description="Other Website">
+		<entry>
+			<cat_id>19</cat_id>
+			<name>Programmer</name>
+			<link>http://feed.feedsky.com/programmer</link>
+			<display_detail>false</display_detail>
+		</entry>
+		<entry>
+			<cat_id>20</cat_id>
+			<name>Csdn</name>
+			<link>http://dev.csdn.net/rss/0.xml</link>
+			<display_detail>false</display_detail>
 		</entry>
 	</rss_category>
 </rss_map>

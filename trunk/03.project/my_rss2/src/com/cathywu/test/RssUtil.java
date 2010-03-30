@@ -77,6 +77,7 @@ public class RssUtil {
      */
     public static List<RssItemBean> getRssItemListByType(String catId) throws JDOMException, IOException {
 		RssBean rss = getRssMap().get(catId);
+		long current = System.currentTimeMillis();
 		TestRss t = new TestRss(rss.getLink());
 		List<SyndEntry> list = t.getRssList();
 		List<RssItemBean> result = new ArrayList<RssItemBean>();
@@ -88,8 +89,10 @@ public class RssUtil {
 			r.setHref(e.getLink());
 			r.setTitle(e.getTitle());
 			r.setPublishDate(e.getPublishedDate());
+			r.setParentRssBean(rss);
 			result.add(r);
 		}
+		rss.setUseTime(System.currentTimeMillis() - current);
 		return result;
 	}
 
@@ -136,12 +139,15 @@ public class RssUtil {
             List temp = e.getChildren("entry");
             cat = new RssCategoryBean();
             cat.setCategory(e.getAttributeValue("name"));
-            cat.setCatName("description");
+            cat.setCatName(e.getAttributeValue("description"));
+            cat.setId(e.getAttributeValue("id"));
             list = new ArrayList<RssBean>();
             for (Object o : temp) {
                 bean = new RssBean(((Element) o).getChild("name").getValue(),
                         ((Element) o).getChild("link").getValue(),
                         ((Element) o).getChild("cat_id").getValue());
+                bean.setDisplayDetail(Boolean.parseBoolean(((Element) o)
+						.getChild("display_detail").getValue()));
                 list.add(bean);
                 rssMap.put(bean.getCatId(), bean);
             }
