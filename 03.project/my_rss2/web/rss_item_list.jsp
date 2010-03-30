@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>Rss Item List - <s:property value="typeName"/></title>
+    <title>Rss Item List - <s:property value="rss.typeName"/></title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -36,7 +36,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <h1><s:property value="typeName"/></h1>
+    <h1><s:property value="rss.typeName"/></h1>
+    <span style="font-size: 12px;">Use Time: <s:property value="rss.useTime" /> ms</span>
+    <br />
     <ul style="list-style:none">
 	<s:iterator value="list" status="st">
 		<li class="c1 <s:if test="#st.odd">odd</s:if><s:else>even</s:else>"><s:property value="#st.index + 1" /></li>

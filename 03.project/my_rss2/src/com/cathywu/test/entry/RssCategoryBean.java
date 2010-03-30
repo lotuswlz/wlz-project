@@ -2,10 +2,11 @@ package com.cathywu.test.entry;
 
 import java.util.List;
 
-public class RssCategoryBean {
+public class RssCategoryBean implements Comparable<RssCategoryBean> {
 
 	private String category;
 	private String catName;
+	private String id;
 	
 	private List<RssBean> childTypeList;
 	
@@ -26,5 +27,14 @@ public class RssCategoryBean {
 	}
 	public void setCatName(String catName) {
 		this.catName = catName;
+	}
+	public int compareTo(RssCategoryBean o) {
+		return Integer.parseInt(this.id) - Integer.parseInt(o.getId());
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 }
