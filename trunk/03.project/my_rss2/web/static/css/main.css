@@ -12,6 +12,8 @@ body {
  hr {
 	color:#C0C0C0;
 	border-width:1px;
+	border-collapse:collapse;
+	border-style:dotted;
  }
  ul {
 	margin-left:0px;

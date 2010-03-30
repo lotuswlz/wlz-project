@@ -24,6 +24,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 	line-height:33px;
 	 	
 	 }
+	 div.content {
+	 	font-size:13px;
+	 }
+	 .s_title {
+	 	font-size:14px;
+	 	font-weight:bold;
+	 	color:#000066;
+	 }
+	 i {
+	 	font-size:13px;
+	 }
 	</style>
   </head>
   
@@ -31,9 +42,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <h1><s:property value="typeName"/></h1>
 	<s:iterator value="list" status="st">
 	<div class="xx">
-		<SPAN><s:property value="title" escape="false"/></SPAN>
+		<SPAN class="s_title"><s:property value="title" escape="false"/></SPAN>&nbsp;&nbsp;<I><s:property value="publishDate"/></I>
 		<br />
-		<div style="width:100%"><div xmlns="http://www.w3.org/1999/xhtml" class="entry"><div xml:base="<s:property value='basePath' />" class="feedEntryContent"><s:property value="description" escape="false"/></div></div></div>
+		<div class="content" style="width:100%"><s:property value="description" escape="false"/></div>
 	</div>
 	<hr/>
 	</s:iterator>

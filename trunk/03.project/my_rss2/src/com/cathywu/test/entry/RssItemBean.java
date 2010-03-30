@@ -22,6 +22,9 @@ public class RssItemBean {
 		this.href = href;
 	}
 	public String getDescription() {
+		if (description != null) {
+			description = description.replaceAll("src=\"\\.\\.", "src=\"http://www.xinhuanet.com/english2010/");
+		}
 		return description;
 	}
 	public void setDescription(String description) {
