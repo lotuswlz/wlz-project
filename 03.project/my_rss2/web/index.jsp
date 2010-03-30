@@ -22,7 +22,7 @@
 <h1>NEWS</h1>
 <ul style="list-style:none">
 	<s:iterator value="list" status="st">
-		<li <s:if test="#st.index/4%2==0">class="odd"</s:if><s:else>class="even"</s:else>><a href="rss_detail.action?catId=<s:property value='catId'/>" target="_blank"><s:property value='typeName'/></a></li>
+		<li <s:if test="#st.index/4%2==0">class="odd"</s:if><s:else>class="even"</s:else>><a href="rss_detail.action?catId=<s:property value='catId'/>&type=2" target="_blank"><s:property value='typeName'/></a></li>
 	</s:iterator>	
 </ul>
 
