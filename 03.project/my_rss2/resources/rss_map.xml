@@ -79,6 +79,24 @@
 			<cat_id>13</cat_id>
 			<display_detail>true</display_detail>
 		</entry>
+		<entry>
+			<name>163头条</name>
+			<link>http://news.163.com/special/00011K6L/rss_newstop.xml</link>
+			<cat_id>21</cat_id>
+			<display_detail>true</display_detail>
+		</entry>
+		<entry>
+			<name>163国内</name>
+			<link>http://news.163.com/special/00011K6L/rss_gn.xml</link>
+			<cat_id>22</cat_id>
+			<display_detail>true</display_detail>
+		</entry>
+		<entry>
+			<name>163国际</name>
+			<link>http://news.163.com/special/00011K6L/rss_gj.xml</link>
+			<cat_id>23</cat_id>
+			<display_detail>true</display_detail>
+		</entry>
 	</rss_category>
 	<rss_category id="2" name="friend_blog" description="Blogs">
 		<entry>
