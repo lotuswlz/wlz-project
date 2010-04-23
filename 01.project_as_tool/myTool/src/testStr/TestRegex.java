@@ -357,6 +357,13 @@ public class TestRegex {
     public static boolean testRegexMatched(String str, String regex) {
         return str.matches(regex);        
     }
+    
+    public static String testGroup(String oldString) {
+        String regex = "^fmth([\\d]+)_(.*)$";
+        String oldKey = oldString.replaceAll(regex, "$2");
+        String maxLenStr = oldString.replaceAll(regex, "$1");
+        return oldKey + " : " + maxLenStr;
+    }
 
 	public static void main(String[] args) {
 //		String regex = "^[^\u4E00-\u9FA5]{0,10}$";//^[chr(0xa1)-chr(0xff)]+$/
@@ -406,6 +413,8 @@ public class TestRegex {
 //                "www.offerme.com.au/unsubscribe?mail=nikki_stone_model@hotmail.com&mailType=");
 //	    System.out.println(a);
 	    
-	    System.out.println(testRegexMatched("asdf,,,,asd)", "^[a-z0-9'\\-_]+$"));
+//	    System.out.println(testRegexMatched("asdf,,,,asd)", "^[a-z0-9'\\-_]+$"));
+	    
+	    System.out.println(testGroup("fmth400_content"));
 	}
 }
