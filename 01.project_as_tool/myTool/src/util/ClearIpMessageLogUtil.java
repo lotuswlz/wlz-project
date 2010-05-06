@@ -31,7 +31,7 @@ public class ClearIpMessageLogUtil {
             } else {
                 System.out.println("Needn't to clear IP Messenger log.");
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
