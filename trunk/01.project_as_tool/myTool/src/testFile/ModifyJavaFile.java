@@ -35,7 +35,7 @@ public class ModifyJavaFile {
             return null;
         }
         
-        return file.listFiles();
+        return file.listFiles(fileFilter);
     }
     
     public void delStr(File file, StringBuffer sbf) throws IOException {
@@ -121,6 +121,13 @@ public class ModifyJavaFile {
             System.gc();
         }
         return tempList;
+    }
+    
+    public void testFileEncode(String filePath) {
+        File[] files = getFiles(filePath);
+        for (File f : files) {
+            
+        }
     }
     
     public static void main(String[] args) {
