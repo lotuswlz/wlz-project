@@ -2,6 +2,8 @@ package testData;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class TestNumber {
 
@@ -65,12 +67,34 @@ public class TestNumber {
             System.out.println(num.intValue());
     }
     
+    public static String pageVersion(String bid) {
+    	if (bid == null || bid.trim().equals("")) {
+    		return null;
+    	}
+    	String[] str = bid.split("-");
+    	int num = Integer.parseInt(str[0].substring(str[0].length() - 1, str[0].length()));
+    	return String.valueOf(num % 2);
+    }
+    
     public static void main(String[] args) {
 //        long[] nums = getRelativeMaxNumber(new long[]{95,95,95});
 //        for (int i = 0; i < nums.length; i++) {
 //            System.out.println(nums[i]);
 //        }
-        calcPercent(new BigDecimal(55), 0.9);
-        calcPercent();
+        //calcPercent(new BigDecimal(55), 0.9);
+        //calcPercent();
+//        System.out.println(pageVersion("1223156456532546540-21548793"));
+    	System.out.println(encode("asdfasdfasdf".getBytes()));
+    }
+    
+    public static byte[] encode(byte[] buffer) {
+        try {
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+            md5.update(buffer);
+            return md5.digest();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
