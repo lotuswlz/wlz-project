@@ -213,10 +213,16 @@ public class monitor {
             Map<String, Integer> map = new HashMap<String, Integer>();
             System.out.print("Fetching mails...... ");
             for (Message msg : messages) {
+                
                 senderAddress = ((InternetAddress[])msg.getFrom())[0].getAddress();
 
                 if (msg.getSubject().startsWith("complaint about message from")
                         && senderAddress.trim().equals("staff@hotmail.com")) {
+                	
+//
+//                	String content = readMailTest(msg.getInputStream());
+//                    writeLog(String.valueOf(msg.getMessageNumber()), content);
+                	
                     count = count + 1;
                     len = fmt.length();
                     for (int j = 0; j < len; j++) {
@@ -342,10 +348,17 @@ public class monitor {
         try {
             File file = new File(fileName);
             OutputStream os = new FileOutputStream(file);
-            MimeUtility.encode(os, "7bit");
+//            MimeUtility.encode(os, "7bit");
+//            MimeUtility.encode(os, "7bit");
             message.writeTo(os);
-            MimeUtility.encode(os, "7bit");
             os.close();
+            
+            file = new File("D:/development_documents/jmrp_test_log/" + message.getMessageNumber() + "_" + MimeUtility.getEncoding(message.getDataHandler()));
+            os = new FileOutputStream(file);
+            String temp = MimeUtility.decodeText(getFileContent(fileName));
+            os.write(temp.getBytes());
+            os.close();
+            
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -361,20 +374,7 @@ public class monitor {
             StringBuffer sbf = new StringBuffer();
             File file = new File(fileName);
             InputStream is = new FileInputStream(file);
-            
-//            FileReader fr = null;
-//            BufferedReader br = null;
-//            
-//            fr = new FileReader(file);
-//            br = new BufferedReader(fr);
-//            
-//            String inputLine;
-//
-//            while ((inputLine = br.readLine()) != null) {
-//              System.out.println(inputLine);
-//            }
-//            br.close();
-            
+            is = MimeUtility.decode(is, "7bit");
             int tempbyte = 0;
             while ((tempbyte = is.read()) != -1) {
                 sbf.append((char) tempbyte);
@@ -386,7 +386,10 @@ public class monitor {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
+        } catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return null;
     }
     
@@ -587,5 +590,35 @@ public class monitor {
         }
         
         return null;
+    }
+    
+    public static String readMailTest(InputStream is) {
+    	StringBuffer sbf = new StringBuffer();
+    	try {
+			int tempbyte = 0;
+			while ((tempbyte = is.read()) != -1) {
+			    sbf.append((char) tempbyte);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return sbf.toString();
+    }
+    
+    private static void writeLog(String filename, String content) {
+    	try {
+			String path = "D:/development_documents/jmrp_test_log/" + filename + ".log";
+			
+			File file = new File(path);
+			OutputStream os = new FileOutputStream(file);
+			os.write(content.getBytes());
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }

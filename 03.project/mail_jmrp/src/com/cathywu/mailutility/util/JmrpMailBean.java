@@ -8,7 +8,6 @@
 
 package com.cathywu.mailutility.util;
 
-import javax.mail.Address;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.internet.InternetAddress;
@@ -42,7 +41,6 @@ public class JmrpMailBean {
         this.from = from;
         this.to = to;
         this.contentType = contentType;
-//        System.out.println("Init with 5 parameters " + ++counter[1]);
     }
     
     public JmrpMailBean(Message message) {
@@ -63,7 +61,6 @@ public class JmrpMailBean {
         } catch (MessagingException e) {
             e.printStackTrace();
         }
-//        System.out.println("Init with 1 parameters "  + ++counter[2]);
     }
     
     public int getUnsubscribeSetting() {

@@ -33,7 +33,7 @@
 	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-lang-2.4.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-logging-1.1.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/geronimo-activation_1.1_spec-1.0.2.jar"/>
-	<classpathentry kind="lib" path="web/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/mail.jar" sourcepath="web/WEB-INF/lib/geronimo-activation_1.1_spec-1.0.2.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/velocity-1.5.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/velocity-tools-generic-1.4.jar"/>
 	<classpathentry kind="output" path="web/WEB-INF/classes"/>
