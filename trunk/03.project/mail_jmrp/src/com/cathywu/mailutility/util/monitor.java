@@ -212,8 +212,13 @@ public class monitor {
             String fmt = "";
             Map<String, Integer> map = new HashMap<String, Integer>();
             System.out.print("Fetching mails...... ");
+            Date date = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            date = sdf.parse("2010-05-28");
             for (Message msg : messages) {
-                
+                if (msg.getReceivedDate().before(date)) {
+                	continue;
+                }
                 senderAddress = ((InternetAddress[])msg.getFrom())[0].getAddress();
 
                 if (msg.getSubject().startsWith("complaint about message from")
@@ -353,11 +358,11 @@ public class monitor {
             message.writeTo(os);
             os.close();
             
-            file = new File("D:/development_documents/jmrp_test_log/" + message.getMessageNumber() + "_" + MimeUtility.getEncoding(message.getDataHandler()));
-            os = new FileOutputStream(file);
-            String temp = MimeUtility.decodeText(getFileContent(fileName));
-            os.write(temp.getBytes());
-            os.close();
+//            file = new File("D:/development_documents/jmrp_test_log/" + message.getMessageNumber() + "_" + MimeUtility.getEncoding(message.getDataHandler()));
+//            os = new FileOutputStream(file);
+//            String temp = MimeUtility.decodeText(getFileContent(fileName));
+//            os.write(temp.getBytes());
+//            os.close();
             
         } catch (FileNotFoundException e) {
             e.printStackTrace();

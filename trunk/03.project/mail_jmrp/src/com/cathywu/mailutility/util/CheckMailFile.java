@@ -90,7 +90,7 @@ public class CheckMailFile {
 			String str = "=09=09=09=09=09This email was sent to the subscription of Brad Smith (brads=mith216@hotmail.com).<br />=09=09=09=09=09=09=09=09=09=09If you wish to man=age your subscriptions, please <a href=3D\"http://www.offerme.com.au/my/acco=unt/preferences?source=3Demail\">click here</a>.<br />=09=09=09=09=09If you are not the intended recipient please click <a href==3D\"http://www.offerme.com.au/unsubscribe?mail=3Dbradsmith216@hotmail.com&m=ailType=3D1\">unsubscribe</a>.<br />";
 			String temp = MimeUtility.decodeText(str);
 			System.out.println(temp);
-			temp = MimeUtility.encodeText(str, "UTF-8", "base64");
+			
 			System.out.println(MimeUtility.encodeText(str));
 			System.out.println(temp);
 		} catch (UnsupportedEncodingException e) {
