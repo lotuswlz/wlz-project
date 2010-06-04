@@ -92,10 +92,14 @@ public class TestString {
 		
 		
 		
-		String regex = "[\\d]{4}-[\\d]{2}-[\\d]{2} [\\d]{2}:[\\d]{2}:[\\d]{2}";
-		if ("2009-01-31 20:59:59".matches(regex)) {
-		    System.out.println("true");
-		}
+//		String regex = "[\\d]{4}-[\\d]{2}-[\\d]{2} [\\d]{2}:[\\d]{2}:[\\d]{2}";
+//		if ("2009-01-31 20:59:59".matches(regex)) {
+//		    System.out.println("true");
+//		}
+		
+		
+		
+		changeEmailList("'ronplata@optusnet.com.au','msatt@westnet.com.au','leexen96@hotmail.com','lhurley@merlo.com.au','lindsay25@optusnet.com.au','lily@chloeferres.com.au','lisjay@iprimus.com.au','lnge@bigpond.com','lois_lim@hotmsil.com','lukeancath@gmail.com','luke@ambientadvertising.com.au','m67payne@bigpond.com.au','maqamer@hotmail.com','marika@mydomesticbliss.net','mariovan@westnet.com.au','mark@e-channel.com.au','martin.oconnor@worleyparsons.com','mary.ghanim@gmail.com','mclennan-holod@bigpond.com','mccoy07@optusnet.com.au','mcgowen5@optusnet.com.au','men710@bigpond.net.au','mick4402@bigpond.com','mike_1985@live.com.sg','miltabest@htmail.com','mniirapat@hotmail.com','muzette2006@live.com','nerakandco@bigpond.com.au','nugget_73@hotmail.com','patricia3355@hotmail.com','pdgnad1@bigpond.com','performance@aim.com','peter.vinci@au.thewg.com','mgmdesign@optus.com.au','philipmac@yahoo-inc.com','ppokeymindy@hotmail.com','pradastyla@live.com','prowe@clixgalore.com.au','qldredsstore@bigpond.com','pyeend@aapt.com.au','r_decini@digisurf.com.au','rcoops2303@dodo.com.au','rickfreak68@bigpond.com','rosbob1@bigpond.net.au','rosemaiedebruin@gmail.com','rsberryau@hotmail.com','ryan.vincent@bigpond.com','sales.jolice@hotmail.com','randmhellams@cci.net','sammerob@bigpond.com','sbaragry@dmgradio.com.au','seancrosse@live.com.au','simone.mcdonlad@three.com.au','sixbabes@hotmail.cm','smoking.dragon@bigpond.com.au','sonia_english@bigpond.com','sophieward09@gmail.com','stacywells1@bigpond.com','strutoz@hotmail.com.au','subscribe2007@pinball.com.au','tcobby@westnet.com','tdlc@optusnet.com','theburridges@bigpong.com','thuan_nguyen77@gmail.com','tongfu_trading@hotmail.com','traceykirkdowney@bigpong.com','twright6@bigpond.com','valys@netspace.net.au','w.jones@hotmail.com.au','vzbexm84@google.info','wow_1106@hotmail.com','www.kwassi@optusnet.com.au','window@financial.com','xntrek@iinet.net.au','candcking@optusnet.com.au','glen.ramsay@ge.com','danni_w10@hotmail.com','tracey.141@hotmail.com','movetosydney@hotmail.com','shanelawson28@hotmail.com','david.p@evrika.com.au','tm.media@hotmail.com','peterjasko@optusnet.com.au','julieandregan@optusnet.com.au','jasming@dodo.com.au','dinesh.perera@cadbury.com','lady2009@live.com.au','ladyz2009@live.com.au','melissa083@bigpond.com','amcinnes@5dc.com.au','cstewart@freedomtanks.com','phillipbelford@optusnet.com.au','dixonzone@optusnet.com.au','paulanic@optusnet.com.au','veraandjames@optusnet.com.au','nellymatt1@optusnet.com.au','mau.prien@gmail.com.au','williamkozma@gmail.com.au','gzsohe10@msn.de','lkw85@hotail.com','qvdhbw69@alexa.info','rolwe@optusnet.com.au','peter.barnes@exemail.com','sandylrogers@bihpond.com','trojun.51@0ptusnet.com.au','soe_souljahs@hotmaill.com','louiseakib@optusnet.com.au','johnlawrence46@optusnet.com.au','cstewart@freedomtanks.com','dixonzone@optusnet.com.au','veraandjames@optusnet.com.au','nellymatt1@optusnet.com.au','jack.walker@raphmickey.com','cstewart@freedomtanks.com','phillipbelford@optusnet.com.au','dixonzone@optusnet.com.au','veraandjames@optusnet.com.au','veraandjames@optusnet.com.au','cstewart@freedomtanks.com','phillipbelford@optusnet.com.au','dixonzone@optusnet.com.au','dixonzone@optusnet.com.au'");
 	}
 	
 	public String getSqlParams(String keyword, boolean completedMatched){
@@ -184,5 +188,26 @@ public class TestString {
 	public static void testChineseChars() throws UnsupportedEncodingException {
 	    String str = "ÄãºÃabc";
 	    System.out.println(str.trim().getBytes("UTF-8").length);
+	}
+	
+	public static void changeEmailList(String str) {
+		String[] arr = str.split(",");
+		List<String> list = new ArrayList<String>();
+		
+		for (String s : arr) {
+			if (list.contains(s.trim())) {
+				continue;
+			}
+			list.add(s.trim());
+		}
+		
+		StringBuffer sbf = new StringBuffer();
+		for (String s : list) {
+			sbf.append(s);
+			sbf.append(",");
+		}
+		
+		String temp = sbf.toString().trim().substring(0, sbf.length() - 1);
+		System.out.println(temp);
 	}
 }
