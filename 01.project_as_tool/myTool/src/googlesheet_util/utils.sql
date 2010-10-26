@@ -69,8 +69,25 @@ create table t_report_data (
 	value number(12,2),/*can be null, maybe some data is N/A*/
 	CONSTRAINT pk_report_data
 		PRIMARY KEY (data_id) USING INDEX TABLESPACE tp_report_idx,
-	CONSTRAINT fk_rpt_data_meta_id
+	CONSTRAINT fk_rpt_data_column_id
 		FOREIGN KEY (column_id) REFERENCES t_data_meta(meta_id)
+) tablespace tp_report;
+-- sql description
+create table t_sql (
+	sql_id number(8) not null,
+	sql_text clob not null,
+	is_avaliable number(1) default 1 not null,
+	CONSTRAINT pk_sql
+		PRIMARY KEY (sql_id) USING INDEX TABLESPACE tp_report_idx
+) tablespace tp_report;
+-- sql ¸ú data µÄÓ³Éä
+create table t_data_sql_relation (
+	sql_id number(8) not null,
+	data_meta_id number(8) not null,
+	CONSTRAINT fk_sql_rlt_data_meta_id
+		FOREIGN KEY (data_meta_id) REFERENCES t_data_meta(meta_id),
+	CONSTRAINT fk_sql_rlt_sql_id
+		FOREIGN KEY (sql_id) REFERENCES t_sql(sql_id)
 ) tablespace tp_report;
 
 /**
