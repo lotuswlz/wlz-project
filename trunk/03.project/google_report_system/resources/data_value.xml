@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data_value>
+	<single_value id="total_visitor" data_source_id="3" field_name="ga:visitors" />
+	<single_value id="total_new_visits" data_source_id="3" field_name="ga:newVisits" />
+	<single_value id="total_visits" data_source_id="3" field_name="ga:visits" />
+	<calc_value id="return_visit_percentage" formula="($2-$1)/$2">
+		<sub_value id="1" reference_id="total_new_visits"></sub_value>
+		<sub_value id="2" reference_id="total_visits"></sub_value>
+	</calc_value>
+</data_value>

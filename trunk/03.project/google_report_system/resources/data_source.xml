@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data_source_map>
+	<query id="1" description="bounce/return visits of top 10 sources">
+		<dimensions>ga:source,ga:medium</dimensions>
+		<metrics>ga:visits,ga:bounces,ga:newVisits</metrics>
+		<sort>-ga:visits</sort>
+		<filters>ga:source!@mail;ga:source!@inbox;ga:source!@192.168.1.151;ga:source!@211.144.118.170</filters>
+		<maxresult>10</maxresult>
+	</query>
+	<query id="2" description="Direct Value">
+		<dimensions></dimensions>
+		<metrics>ga:visitors,ga:visits,ga:newVisits</metrics>
+		<maxresult>0</maxresult>
+	</query>
+	<query id="3" description="Time/Visits on Groupbuy Deal Page">
+		<dimensions>ga:pagePath</dimensions>
+		<metrics>ga:pageviews,ga:uniquePageviews,ga:timeOnPage</metrics>
+		<sort>-ga:pageviews</sort>
+		<filters>ga:pagePath=@/groupbuy;ga:pagePath!@/signin;ga:pagePath!@/search;ga:pagePath!@input;ga:pagePath!@order;ga:pagePath!@transaction</filters>
+		<maxresult>-1</maxresult>
+	</query>
+	<query id="4" description="Time/Visits on GB Coupon Deal Page">
+		<dimensions>ga:pagePath</dimensions>
+		<metrics>ga:pageviews,ga:uniquePageviews,ga:timeOnPage</metrics>
+		<sort>-ga:pageviews</sort>
+		<filters>ga:pagePath=@/groupserve;ga:pagePath!@/signin;ga:pagePath!@/search;ga:pagePath!@ajax</filters>
+		<maxresult>-1</maxresult>
+	</query>
+	<query id="5" description="Time of new Visits on GB/Coupon Deal Page">
+		<dimensions>ga:pagePath</dimensions>
+		<metrics>ga:pageviews,ga:timeOnPage</metrics>
+		<sort>-ga:pageviews</sort>
+		<filters>ga:pagePath=@/groupserve,ga:pagePath=@/groupbuy;ga:pagePath!@/signin;ga:pagePath!@/search;ga:pagePath!@ajax;ga:pagePath!@/signin;ga:pagePath!@/search;ga:pagePath!@input;ga:pagePath!@order;ga:pagePath!@transaction;ga:visitorType==New Visitor</filters>
+		<maxresult>0</maxresult>
+	</query>
+</data_source_map>
