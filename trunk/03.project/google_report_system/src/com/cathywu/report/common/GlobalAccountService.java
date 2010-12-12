@@ -101,6 +101,7 @@ public class GlobalAccountService {
 		query.setSort(queryParam.getSort());
 		query.setStartDate(queryParam.getStartDate());
 		query.setEndDate(queryParam.getEndDate());
+		query.setStartIndex(queryParam.getStartIndex());
 	}
 	
 	public static void invalid() {
@@ -122,24 +123,24 @@ public class GlobalAccountService {
 			
 			QueryParam query = null;
 			
-//			for (Iterator<Entry<String, QueryParam>> it = map.entrySet().iterator(); it.hasNext();) {
-//				Entry<String, QueryParam> e = it.next();
-//				query = DataSourceUtils.getQueryParamMap().get(e.getKey());
-//				query.setStartDate(timeRange[0]);
-//				query.setEndDate(timeRange[1]);
-//				DataFeed dataFeed = s.getDataFeed(query);
-//				System.out.println("-----------" + e.getKey() + " (" + query.getDesc() + ")-----------");
-//				for (DataSource source : dataFeed.getDataSources()) {
-//					System.out.println("Table Id: " + source.getTableId());
-//					System.out.println("Table Name: " + source.getTableName());
-//				}
-//				System.out.println("From " + dataFeed.getStartDate().getValue() + " to " + dataFeed.getEndDate().getValue());
-//				System.out.println("Total Record count: " + dataFeed.getTotalResults() + "");
-//				
-//				for (Metric m : dataFeed.getAggregates().getMetrics()) {
-//					System.out.println(m.getName() + ": " + m.getValue());
-//				}
-//			}
+			for (Iterator<Entry<String, QueryParam>> it = map.entrySet().iterator(); it.hasNext();) {
+				Entry<String, QueryParam> e = it.next();
+				query = DataSourceUtils.getQueryParamMap().get(e.getKey());
+				query.setStartDate(timeRange[0]);
+				query.setEndDate(timeRange[1]);
+				DataFeed dataFeed = s.getDataFeed(query);
+				System.out.println("-----------" + e.getKey() + " (" + query.getDesc() + ")-----------");
+				for (DataSource source : dataFeed.getDataSources()) {
+					System.out.println("Table Id: " + source.getTableId());
+					System.out.println("Table Name: " + source.getTableName());
+				}
+				System.out.println("From " + dataFeed.getStartDate().getValue() + " to " + dataFeed.getEndDate().getValue());
+				System.out.println("Total Record count: " + dataFeed.getTotalResults() + "");
+				
+				for (Metric m : dataFeed.getAggregates().getMetrics()) {
+					System.out.println(m.getName() + ": " + m.getValue());
+				}
+			}
 			
 			System.out.println("---------------------");
 			DataFeed dataFeed = s.getDataFeed(map.get("5"));

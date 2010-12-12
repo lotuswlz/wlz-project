@@ -1,5 +1,8 @@
 package com.cathywu.report.bean;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class QueryParam {
 	
 	private String queryId;
@@ -13,6 +16,14 @@ public class QueryParam {
 	private String sort;
 	private int maxResults;
 	
+	private int startIndex = 1;
+	
+	public int getStartIndex() {
+		return startIndex;
+	}
+	public void setStartIndex(int startIndex) {
+		this.startIndex = startIndex;
+	}
 	public String getDimensions() {
 		return dimensions;
 	}
@@ -66,5 +77,12 @@ public class QueryParam {
 	}
 	public void setDesc(String desc) {
 		this.desc = desc;
+	}
+	
+	public static void main(String[] args) {
+		BigDecimal a = new BigDecimal(12342);
+		BigDecimal b = new BigDecimal(1000);
+		System.out.println(a.divide(b, RoundingMode.UP));
+		System.out.println(a.divide(b, RoundingMode.DOWN));
 	}
 }

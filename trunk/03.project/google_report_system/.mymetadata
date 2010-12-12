@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="my_rss"
+  name="google_report_system"
   id="myeclipse.1269591898873"
   context-root="/my_rss"
   j2ee-spec="5.0"
-  archive="my_rss.war">
+  archive="google_report_system.war">
   <attributes>
     <attribute name="webrootdir" value="web" />
   </attributes>
