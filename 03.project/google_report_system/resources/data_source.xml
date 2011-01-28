@@ -33,4 +33,11 @@
 		<filters>ga:pagePath=@/groupserve,ga:pagePath=@/groupbuy;ga:pagePath!@/signin;ga:pagePath!@/search;ga:pagePath!@ajax;ga:pagePath!@/signin;ga:pagePath!@/search;ga:pagePath!@input;ga:pagePath!@order;ga:pagePath!@transaction;ga:visitorType==New Visitor</filters>
 		<maxresult>0</maxresult>
 	</query>
+	<query id="6" description="Time/Visits on Groupbuy Deal Page">
+		<dimensions>ga:pagePath,ga:visitorType</dimensions>
+		<metrics>ga:pageviews,ga:uniquePageviews,ga:timeOnPage</metrics>
+		<sort>-ga:pageviews</sort>
+		<filters>ga:pagePath=@/groupbuy;ga:pagePath!@/signin;ga:pagePath!@/search;ga:pagePath!@input;ga:pagePath!@order;ga:pagePath!@transaction</filters>
+		<maxresult>-1</maxresult>
+	</query>
 </data_source_map>
