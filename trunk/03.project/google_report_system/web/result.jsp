@@ -57,11 +57,11 @@
 	</tr>
 	<tr>
 		<td>Uniq. visit to GB</td>
-		<td>&nbsp;</td>
-	</tr>
-	<tr>
-		<td>Uniq. visit to GBC</td>
-		<td>&nbsp;</td>
+		<td>
+		<s:iterator value="groupbuyVisitList" status="st" id="id">
+			<s:property value="#id" /> <br/>
+		</s:iterator>
+		</td>
 	</tr>
 </table>
 

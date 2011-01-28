@@ -181,7 +181,7 @@ public class GoogleFetchDataUtils {
 
 		// Set username, password and feed URI from command-line arguments.
 		String userName = "cathywu@iwanttobuy.com.au";
-		String userPassword = "4666lotuswlz";
+		String userPassword = "*************";
 		AnalyticsService myService = new AnalyticsService(
 				"exampleCo-exampleApp-1");
 

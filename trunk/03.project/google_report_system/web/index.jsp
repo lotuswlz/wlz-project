@@ -21,6 +21,7 @@
 <form action="now_test.action" method="post">
 <s:textfield name="username"/>
 <s:password name="password"/>
+<s:textarea name="groupbuyIds"/>
 <input type="submit" value="submit"/>
 </form>
 </body>
