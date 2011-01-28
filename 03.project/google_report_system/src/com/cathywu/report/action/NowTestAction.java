@@ -1,6 +1,8 @@
 package com.cathywu.report.action;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.cathywu.report.bean.DataValuePool;
@@ -21,6 +23,8 @@ public class NowTestAction extends ActionSupport {
 	private String username;
 	private String password;
 	private String timeRange;
+	private String groupbuyIds;
+	private List<String> groupbuyVisitList;
 	
 	private Map<String, DataFeed> dataMap;
 	
@@ -74,6 +78,7 @@ public class NowTestAction extends ActionSupport {
 	
 	private void fillData() {
 		String[] times = TimeRangeUtils.latestRangeDesc();
+		System.out.println(times[0] + "-" + times[1]);
 		form = new NowTestForm();
 		// direct value
 		for (Metric m : dataMap.get(times[0] + "-" + times[1] + "-" + "2").getAggregates().getMetrics()) {
@@ -168,28 +173,52 @@ public class NowTestAction extends ActionSupport {
 	}
 	
 	private void printVisitToEachDeal() {
-		String[] arr = { "1040", "1039", "1041", "1042", "1044", "1043",
-				"1049", "1050", "1051", "1052", "1055", "1053", "1057", "1056",
-				"1058", "1059", "1065", "1061", "1066", "1067", "1045", "1046",
-				"1048", "1047", "1054", "1060", "1062", "1063" };
+		String[] arr = this.groupbuyIds.split("\n");
 		int campaignId = 0;
 		int temp1 = 0;
 		int temp2 = 0;
+		this.groupbuyVisitList = new ArrayList<String>();
 		for (String str : arr) {
+			str = str.trim();
 			campaignId = Integer.parseInt(str);
 			if (form.getGbVisitmap().get(str) != null) {
 				temp1 = form.getGbVisitmap().get(str);
-				System.out.println("temp1=" + temp1);
+				//System.out.println("temp1=" + temp1);
 			}
 			if (form.getGbcVisitmap().get(str) != null) {
 				temp2 = form.getGbcVisitmap().get(str);
-				System.out.println("temp2=" + temp2);
+				//System.out.println("temp2=" + temp2);
 			}
 			System.out.println(campaignId + ": " + (temp1 + temp2));
+			this.groupbuyVisitList.add(campaignId + ": " + (temp1 + temp2));
 		}
 	}
 
 	public NowTestForm getForm() {
 		return form;
+	}
+	
+	public static void main(String[] args) {
+		NowTestAction action = new NowTestAction();
+		action.setUsername("cathywu@iwanttobuy.com.au");
+		action.setPassword("4666lotuswlz");
+		try {
+			action.execute();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public String getGroupbuyIds() {
+		return groupbuyIds;
+	}
+
+	public void setGroupbuyIds(String groupbuyIds) {
+		this.groupbuyIds = groupbuyIds;
+	}
+
+	public List<String> getGroupbuyVisitList() {
+		return groupbuyVisitList;
 	}
 }

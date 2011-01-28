@@ -20,7 +20,7 @@ import com.cathywu.report.bean.QueryParam;
 
 public class DataSourceUtils {
 
-    private final static String XMLFILEPATH = "E:/project/JAVA/wlz-project/03.project/google_report_system/resources/data_source.xml";
+    private final static String XMLFILEPATH = "E:/MyProject/wlz-project/03.project/google_report_system/resources/data_source.xml";
     
     private static Map<String, QueryParam> queryParamMap;
     static {

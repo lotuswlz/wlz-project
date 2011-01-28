@@ -61,7 +61,7 @@ public class DataValuePool {
 			} else {
 				dataFeed = globalAccountService.getDataFeed(query);
 				int maxResult = dataFeed.getTotalResults();
-				int pageSize = new BigDecimal(maxResult).divide(new BigDecimal(2000), RoundingMode.UP).intValue();
+				int pageSize = new BigDecimal(maxResult).divide(new BigDecimal(1000), RoundingMode.UP).intValue();
 				dataFeed.setEntries(pagedList(query, pageSize));
 			}
 			valueMap.put(timeRange[0] + "-" + timeRange[1] + "-"
@@ -71,10 +71,10 @@ public class DataValuePool {
 	
 	private static List<DataEntry> pagedList(QueryParam query, int pageSize) throws InstanceInvalidException {
 		List<DataEntry> list = new ArrayList<DataEntry>();
-		query.setMaxResults(2000);
+		query.setMaxResults(1000);
 		DataFeed dataFeed = null;
 		for (int i = 0; i < pageSize; i++) {
-			query.setStartIndex(i * 2000 + 1);
+			query.setStartIndex(i * 1000 + 1);
 			dataFeed = globalAccountService.getDataFeed(query);
 			list.addAll(dataFeed.getEntries());
 		}
