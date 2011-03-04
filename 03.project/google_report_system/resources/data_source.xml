@@ -16,14 +16,14 @@
 		<dimensions>ga:pagePath</dimensions>
 		<metrics>ga:pageviews,ga:uniquePageviews,ga:timeOnPage</metrics>
 		<sort>-ga:pageviews</sort>
-		<filters>ga:pagePath=@/groupbuy;ga:pagePath!@/signin;ga:pagePath!@/search;ga:pagePath!@input;ga:pagePath!@order;ga:pagePath!@transaction</filters>
+		<filters>ga:pagePath=@/groupbuy;ga:pagePath!@/signin;ga:pagePath!@/search;ga:pagePath!@input;ga:pagePath!@order;ga:pagePath!@transaction</filters><!-- ;ga:pagePath=~^.*source=(email|hi|hd|hs|hb|h2|friendemail) -->
 		<maxresult>-1</maxresult>
 	</query>
 	<query id="4" description="Time/Visits on GB Coupon Deal Page">
 		<dimensions>ga:pagePath</dimensions>
 		<metrics>ga:pageviews,ga:uniquePageviews,ga:timeOnPage</metrics>
 		<sort>-ga:pageviews</sort>
-		<filters>ga:pagePath=@/groupserve;ga:pagePath!@/signin;ga:pagePath!@/search;ga:pagePath!@ajax</filters>
+		<filters>ga:pagePath=@/groupserve;ga:pagePath!@/signin;ga:pagePath!@/search;ga:pagePath!@ajax</filters><!-- ;ga:pagePath=~^.*source=(email|hi|hd|hs|hb|h2|friendemail) -->
 		<maxresult>-1</maxresult>
 	</query>
 	<query id="5" description="Time of new Visits on GB/Coupon Deal Page">

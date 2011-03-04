@@ -14,15 +14,26 @@
  ul li {
 	width:24%;
  }
+
 </style>
 </head>
 
 <body>
 <form action="now_test.action" method="post">
-<s:textfield name="username"/>
-<s:password name="password"/>
-<s:textarea name="groupbuyIds"/>
-<input type="submit" value="submit"/>
+<table>
+<tr>
+	<td><s:textfield name="username" label="username"/></td>
+</tr>
+<tr>
+	<td><s:password name="password" label="password"/></td>
+</tr>
+<tr>
+	<td><s:textarea name="groupbuyIds" cssStyle="width:100px;height:150px" label="campaign IDs"/></td>
+</tr>
+<tr>
+	<td colspan="2" align="right"><input type="submit" value="submit"/></td>
+</tr>
+<table>
 </form>
 </body>
 </html>

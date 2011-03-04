@@ -11,13 +11,30 @@
 <title>Welcome to My Rss</title>
 <link rel="stylesheet" type="text/css" href="static/css/main.css">
 <style type="text/css">
-
+ .ab {
+	text-decoration:none;
+	color:black;
+	border-collapse:collapse;
+	border-width:1px;
+	border-style:solid;
+	border-color:#888888;
+	background-color:#EEEEEE;
+ }
+ .ab:hover {
+	text-decoration:none;
+	color:black;
+	background-color:#DEDEDE;
+ }
+ .ab:visited {
+	color:black;
+ }
 </style>
 </head>
 
 <body>
 
 <h1><s:property value="timeRange"/></h1>
+<a class="ab" href="visit_rate_list.action">see visit growth rate</a>
 <table>
 	<tr>
 		<td>Abstract Visitor: </td>
