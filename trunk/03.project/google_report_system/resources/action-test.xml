@@ -9,6 +9,11 @@
 			<result name="success">/result.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
+		<action name="visit_rate_list" class="com.cathywu.report.action.VisitsCountListAction">
+			<result name="success">/result.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="back_to_index">/index.jsp</result>
+		</action>
 	</package>
 
 </struts>

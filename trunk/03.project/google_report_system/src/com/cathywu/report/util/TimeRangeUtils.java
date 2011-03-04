@@ -66,8 +66,8 @@ public class TimeRangeUtils {
 		range[0] = timeDesc(today.getTime());
 		
 		System.gc();
-//		range[1] = "2010-10-27";
-//		range[0] = "2010-09-30";
+//		range[0] = "2010-11-25";
+//		range[1] = "2010-12-22";
 		return range;
 	}
 	
