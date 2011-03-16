@@ -1,5 +1,7 @@
 package com.cathywu.report.action;
 
+import org.apache.log4j.Logger;
+
 import com.cathywu.report.common.GlobalAccountService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -12,24 +14,33 @@ public class LoginAction extends ActionSupport {
     private String username;
     private String password;
     
+    private static Logger log = Logger.getLogger(LoginAction.class);
+    
     @Override
     public String execute() throws Exception {
-        if (!GlobalAccountService.isServiceAvailable()
-                && this.username != null && this.password != null
-                && !this.username.trim().equals("")
-                && !this.password.trim().equals("")) {
-            GlobalAccountService.getInstance(username, password);
-        } else if (!GlobalAccountService.isServiceAvailable()
-                && (this.username == null || this.password == null
-                        || this.username.trim().equals("") || this.password
-                        .trim().equals(""))) {
-            return "to_login";
-        } else if (GlobalAccountService.isServiceAvailable()) {
+        try {
+            if (!GlobalAccountService.isServiceAvailable()
+                    && this.username != null && this.password != null
+                    && !this.username.trim().equals("")
+                    && !this.password.trim().equals("")) {
+                GlobalAccountService.getInstance(username, password);
+            } else if (!GlobalAccountService.isServiceAvailable()
+                    && (this.username == null || this.password == null
+                            || this.username.trim().equals("") || this.password
+                            .trim().equals(""))) {
+                return "to_login";
+            } else if (GlobalAccountService.isServiceAvailable()) {
+                log.info("Google analytics instance available.");
+                return SUCCESS;
+            } else {
+                log.info("Login failure");
+                return ERROR;
+            }
             return SUCCESS;
-        } else {
+        } catch (Exception e) {
+            e.printStackTrace();
             return ERROR;
         }
-        return SUCCESS;
     }
 
     public String getUsername() {
