@@ -34,7 +34,8 @@
 <body>
 
 <h1><s:property value="timeRange"/></h1>
-<a class="ab" href="visit_rate_list.action">see visit growth rate</a>
+<a class="ab" href="visit_rate_list.action">see visit growth rate</a> &nbsp; &nbsp;
+<a class="ab" href="each_deal_visit.jsp">see unique visit to each page</a>
 <table>
 	<tr>
 		<td>Abstract Visitor: </td>

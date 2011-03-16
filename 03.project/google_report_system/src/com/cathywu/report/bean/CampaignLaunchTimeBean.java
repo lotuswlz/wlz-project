@@ -2,11 +2,12 @@ package com.cathywu.report.bean;
 
 import java.util.Date;
 
-public class CampaignLaunchTimeBean {
+public class CampaignLaunchTimeBean implements Cloneable{
 
     private long campaignId;
     private Date beginDate;
     private Date endDate;
+    private int pageUniqueViews;
     public long getCampaignId() {
         return campaignId;
     }
@@ -30,5 +31,18 @@ public class CampaignLaunchTimeBean {
         this.campaignId = campaignId;
         this.beginDate = beginDate;
         this.endDate = endDate;
+    }
+    public int getPageUniqueViews() {
+        return pageUniqueViews;
+    }
+    public void setPageUniqueViews(int pageUniqueViews) {
+        this.pageUniqueViews = pageUniqueViews;
+    }
+    
+    @Override
+    public CampaignLaunchTimeBean clone() throws CloneNotSupportedException {
+        CampaignLaunchTimeBean campaign = new CampaignLaunchTimeBean(this.campaignId, this.beginDate, this.endDate);
+        campaign.setPageUniqueViews(this.pageUniqueViews);
+        return campaign;
     }
 }

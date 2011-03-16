@@ -45,18 +45,9 @@ public class NowTestAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		try {
-			if (!GlobalAccountService.isServiceAvailable()
-					&& this.username != null && this.password != null
-					&& !this.username.trim().equals("")
-					&& !this.password.trim().equals("")) {
-				GlobalAccountService.getInstance(username, password);
-			} else if (!GlobalAccountService.isServiceAvailable()
-					&& (this.username == null || this.password == null
-							|| this.username.trim().equals("") || this.password
-							.trim().equals(""))) {
-				return ERROR;
-			}
-
+		    if (!GlobalAccountService.isServiceAvailable()) {
+		        return "to_login";
+		    }
 			dataMap = DataValuePool.getValueMap();
 
 			String[] times = TimeRangeUtils.latestRangeDesc();

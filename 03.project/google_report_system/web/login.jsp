@@ -19,10 +19,13 @@
 </head>
 
 <body>
-<form action="now_test.action" method="post">
+<form action="login.action" method="post">
 <table>
 <tr>
-	<td><s:textarea name="groupbuyIds" cssStyle="width:100px;height:150px" label="campaign IDs"/></td>
+	<td><s:textfield name="username" label="username"/></td>
+</tr>
+<tr>
+	<td><s:password name="password" label="password"/></td>
 </tr>
 <tr>
 	<td colspan="2" align="right"><input type="submit" value="submit"/></td>

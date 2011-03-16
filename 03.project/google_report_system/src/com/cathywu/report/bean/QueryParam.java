@@ -3,7 +3,7 @@ package com.cathywu.report.bean;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class QueryParam {
+public class QueryParam implements Cloneable {
 	
 	private String queryId;
 	private String desc;
@@ -84,5 +84,21 @@ public class QueryParam {
 		BigDecimal b = new BigDecimal(1000);
 		System.out.println(a.divide(b, RoundingMode.UP));
 		System.out.println(a.divide(b, RoundingMode.DOWN));
+	}
+	
+	@Override
+	public QueryParam clone() throws CloneNotSupportedException {
+	    QueryParam param = new QueryParam();
+	    param.setDesc(this.getDesc());
+	    param.setDimensions(this.getDimensions());
+	    param.setEndDate(this.getEndDate());
+	    param.setFilters(this.getFilters());
+	    param.setMaxResults(this.getMaxResults());
+	    param.setMetrics(this.getMetrics());
+	    param.setQueryId(this.getQueryId());
+	    param.setSort(this.getSort());
+	    param.setStartDate(this.getStartDate());
+	    param.setStartIndex(this.getStartIndex());
+	    return param;
 	}
 }
