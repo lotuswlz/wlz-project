@@ -19,10 +19,10 @@
 </head>
 
 <body>
-<form action="now_test.action" method="post">
+<form action="view_each_deal_page.action" method="post">
 <table>
 <tr>
-	<td><s:textarea name="groupbuyIds" cssStyle="width:100px;height:150px" label="campaign IDs"/></td>
+	<td><s:textfield name="filePath" label="filePath"/></td>
 </tr>
 <tr>
 	<td colspan="2" align="right"><input type="submit" value="submit"/></td>

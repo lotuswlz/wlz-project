@@ -7,6 +7,7 @@
 	<package name="cw-test" extends="cw-default">
 		<action name="now_test" class="com.cathywu.report.action.NowTestAction">
 			<result name="success">/result.jsp</result>
+			<result name="to_login">/login.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 		<action name="visit_rate_list" class="com.cathywu.report.action.VisitsCountListAction">
@@ -15,7 +16,14 @@
 			<result name="back_to_index">/index.jsp</result>
 		</action>
 		<action name="view_each_deal_page" class="com.cathywu.report.action.ViewVisitToEachDealAction">
-			<result name="success">/result.jsp</result>
+			<result name="success">/each_visit_result.jsp</result>
+			<result name="fill_page">/each_deal_visit.jsp</result>
+			<result name="to_login">/login.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="login" class="com.cathywu.report.action.LoginAction">
+			<result name="to_login">/login.jsp</result>
+			<result name="success">/dir.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 	</package>
