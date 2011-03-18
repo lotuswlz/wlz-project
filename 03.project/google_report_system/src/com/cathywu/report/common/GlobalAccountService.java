@@ -30,6 +30,8 @@ public class GlobalAccountService {
 
 	private static GlobalAccountService service;
 	
+	private static AccountFeed accountFeed;
+	
 	private AnalyticsService myService;
 	
 	private GlobalAccountService(String username, String password) throws AuthenticationException {
@@ -41,11 +43,21 @@ public class GlobalAccountService {
 		if (service == null) {
 			service = new GlobalAccountService(username, password);
 			try {
+			    accountFeed = service.connectAccountFeed();
 				DataValuePool.setGlobalAccountService(service);
 				DataValuePool.updateDataPool();
 			} catch (InstanceInvalidException e) {
 				throw new AuthenticationException(e.getMessage());
-			}
+			} catch (MalformedURLException e) {
+			    System.out.println("Error in connecting ACCOUNT URL.");
+                e.printStackTrace();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (ServiceException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
 		}
 		return service;
 	}
@@ -69,11 +81,6 @@ public class GlobalAccountService {
 	public synchronized DataFeed getDataFeed(QueryParam queryParam) throws InstanceInvalidException {
 		try {
 			Thread.sleep(100);
-			URL feedUrl = new URL(ACCOUNTS_URL);
-			AccountFeed accountFeed = myService.getFeed(feedUrl, AccountFeed.class);
-			if (accountFeed.getEntries().isEmpty()) {
-				throw new InstanceInvalidException("Account Feed Invalid");
-			}
 			DataQuery query = new DataQuery(new URL(DATA_URL));
 			query.setIds(accountFeed.getEntries().get(0).getTableId().getValue());
 			fillQueryParam(queryParam, query);
@@ -90,6 +97,16 @@ public class GlobalAccountService {
 			throw new InstanceInvalidException("System is busy now, please try again later.");
 		}
 	}
+
+    private AccountFeed connectAccountFeed() throws MalformedURLException,
+            IOException, ServiceException, InstanceInvalidException {
+        URL feedUrl = new URL(ACCOUNTS_URL);
+        AccountFeed accountFeed = myService.getFeed(feedUrl, AccountFeed.class);
+        if (accountFeed.getEntries().isEmpty()) {
+        	throw new InstanceInvalidException("Account Feed Invalid");
+        }
+        return accountFeed;
+    }
 
 	private void fillQueryParam(QueryParam queryParam, DataQuery query) {
 		query.setDimensions(queryParam.getDimensions());
