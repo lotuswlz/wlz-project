@@ -22,7 +22,7 @@
 <form action="view_each_deal_page.action" method="post">
 <table>
 <tr>
-	<td><s:textfield name="filePath" label="filePath"/></td>
+	<td><s:textfield name="filePath" label="filePath" cssStyle="width:400px;"/></td>
 </tr>
 <tr>
 	<td colspan="2" align="right"><input type="submit" value="submit"/></td>

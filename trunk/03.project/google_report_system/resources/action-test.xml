@@ -18,7 +18,7 @@
 		<action name="view_each_deal_page" class="com.cathywu.report.action.ViewVisitToEachDealAction">
 			<result name="success">/each_visit_result.jsp</result>
 			<result name="fill_page">/each_deal_visit.jsp</result>
-			<result name="to_login">/login.jsp</result>
+			<result name="to_login">/login.jsp</result> 
 			<result name="error">/error.jsp</result>
 		</action>
 		<action name="login" class="com.cathywu.report.action.LoginAction">
