@@ -84,7 +84,11 @@ public class TestNumber {
         //calcPercent(new BigDecimal(55), 0.9);
         //calcPercent();
 //        System.out.println(pageVersion("1223156456532546540-21548793"));
-    	System.out.println(encode("asdfasdfasdf".getBytes()));
+    	
+//    	System.out.println(encode("asdfasdfasdf".getBytes()));
+    	
+    	Long a = null;
+    	System.out.println(a);
     }
     
     public static byte[] encode(byte[] buffer) {

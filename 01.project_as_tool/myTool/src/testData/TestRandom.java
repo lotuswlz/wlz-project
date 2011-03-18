@@ -63,6 +63,11 @@ public class TestRandom {
 	    System.out.println("max times: " + maxCount);
 	    System.out.println("min times: " + minCount);
 	    System.out.println("average times: " + (averageCount / 100));*/
+	    
+	    System.out.println("----------");
+	    System.out.println(getAnyRandInt(5));
+	    
+	    System.out.println(getRand());
 	}
 
     public static Map<Integer, Integer> testGetAnyRandInt(int maxNum, int testCount) {

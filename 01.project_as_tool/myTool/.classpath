@@ -12,5 +12,28 @@
 	<classpathentry kind="lib" path="src/testMail/commons-logging-1.1.jar"/>
 	<classpathentry kind="lib" path="src/testMail/velocity-1.5.jar"/>
 	<classpathentry kind="lib" path="src/testMail/velocity-tools-generic-1.4.jar"/>
+	<classpathentry kind="lib" path="src/optdoc/jdom.jar"/>
+	<classpathentry kind="lib" path="src/improsys/lib/commons-beanutils-1.7.0.jar"/>
+	<classpathentry kind="lib" path="src/improsys/lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="src/improsys/lib/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="src/improsys/lib/commons-httpclient-3.0.jar"/>
+	<classpathentry kind="lib" path="src/improsys/lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="src/improsys/lib/commons-logging-api.jar"/>
+	<classpathentry kind="lib" path="src/improsys/lib/contact-importer.jar"/>
+	<classpathentry kind="lib" path="src/improsys/lib/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="src/improsys/lib/json-lib-2.3-jdk13.jar"/>
+	<classpathentry kind="lib" path="src/improsys/lib/not-yet-commons-ssl-0.3.7.jar"/>
+	<classpathentry kind="lib" path="src/improsys/lib/xparser.jar"/>
+	<classpathentry kind="lib" path="src/improsys_demo/lib/commons-beanutils-1.7.0.jar"/>
+	<classpathentry kind="lib" path="src/improsys_demo/lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="src/improsys_demo/lib/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="src/improsys_demo/lib/commons-httpclient-3.0.jar"/>
+	<classpathentry kind="lib" path="src/improsys_demo/lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="src/improsys_demo/lib/commons-logging-api.jar"/>
+	<classpathentry kind="lib" path="src/improsys_demo/lib/contact-importer.jar"/>
+	<classpathentry kind="lib" path="src/improsys_demo/lib/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="src/improsys_demo/lib/json-lib-2.3-jdk13.jar"/>
+	<classpathentry kind="lib" path="src/improsys_demo/lib/not-yet-commons-ssl-0.3.7.jar"/>
+	<classpathentry kind="lib" path="src/improsys_demo/lib/xparser.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -415,6 +415,12 @@ public class TestRegex {
 	    
 //	    System.out.println(testRegexMatched("asdf,,,,asd)", "^[a-z0-9'\\-_]+$"));
 	    
-	    System.out.println(testGroup("fmth400_content"));
+//	    System.out.println(testGroup("fmth400_content"));
+	    
+	    String str = "asdfasdf\r\nasdf,asdf";
+	    String[] arr = str.split("(\\n|,|;|\\r\\n|\\r)");
+	    for (String t : arr) {
+	    	System.out.println(t);
+	    }
 	}
 }
