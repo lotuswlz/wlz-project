@@ -422,5 +422,9 @@ public class TestRegex {
 	    for (String t : arr) {
 	    	System.out.println(t);
 	    }
+	    
+	    // test on Mar 22nd 2011
+	    String campaignIdStr = "source=email&groupBuyId=asdf&mid=234234234".replaceAll("^.*groupBuyId=([\\d]+)([^\\d].*)*$", "$1");
+	    System.out.println(campaignIdStr);
 	}
 }

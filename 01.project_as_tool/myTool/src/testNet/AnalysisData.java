@@ -25,7 +25,7 @@ public class AnalysisData {
         StringBuffer sb = new StringBuffer();
         try {
             URL url ;//= new URL(LINK);
-            url = new URL("http://211.144.118.170/common/review/list?source=hd");
+            url = new URL("http://211.144.118.170/?source=hd");
             Reader reader = new InputStreamReader(new BufferedInputStream(url.openStream()));
             int c;
             while ((c = reader.read()) != -1) {
