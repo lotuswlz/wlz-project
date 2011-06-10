@@ -6,7 +6,19 @@
 
 	<package name="cw-default" extends="struts-default">
 
-		
+		<interceptors>
+			<interceptor name="testInterceptor"
+				class="com.cathywu.interceptor.TestInterceptor" />
+				
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="testInterceptor" />
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="timer"/>
+
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="myStack" />
 		<global-results>
 			<result name="exception">/error.jsp</result>
 		</global-results>
